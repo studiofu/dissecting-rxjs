@@ -1,3 +1,4 @@
+// normal default jquery document ready function
 $(function() {
   var startTime;
 
@@ -6,6 +7,8 @@ $(function() {
   })
 
   $('#hold-me').mouseup(function() {
+
+    // if startTime is not null and contains value
     if (startTime) {
       const elapsedMilliseconds = (new Date() - startTime);
 

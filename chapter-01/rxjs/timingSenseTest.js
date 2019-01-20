@@ -3,6 +3,10 @@ const mouseDown$ = Rx.Observable.fromEvent(holdMeButton, 'mousedown');
 const mouseUp$ = Rx.Observable.fromEvent(holdMeButton, 'mouseup');
 
 const holdTime$ = mouseUp$.timestamp().withLatestFrom(mouseDown$.timestamp(), (mouseUpEvent, mouseDownEvent) => {
+  console.log(mouseUpEvent);
+  console.log("time: " + (mouseUpEvent.timestamp - mouseDownEvent.timestamp));
+  console.log("value e: " + mouseUpEvent.e)
+  console.log("real value: "+ mouseUpEvent.value)
   return mouseUpEvent.timestamp- mouseDownEvent.timestamp;
 });
 
